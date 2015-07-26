@@ -1,0 +1,3 @@
+@function bettergradient($color1, $color2, $direction: right) {
+  @return linear-gradient(to #{$direction}, #{$color1}, #{$color2});
+}

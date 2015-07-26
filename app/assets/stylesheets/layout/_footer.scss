@@ -1,0 +1,12 @@
+footer {
+  background-color: #12ffc9;
+  margin-top: 0;
+  padding-top: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $division-height-pixel;
+  background-image: bettergradient(lightseagreen, white, right );
+  border-top: 1px solid adjust_color(lightseagreen, $saturation: 40%);
+
+}

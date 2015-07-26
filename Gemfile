@@ -14,12 +14,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'turbolinks'
 
 gem 'responders', '~> 2.0'
-
+gem 'slim-rails'
 gem 'bootstrap-sass'
-gem 'rails-backbone'
-gem 'marionette-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

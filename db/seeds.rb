@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Word.delete_all
+words = IO.readlines("db/dictionary.txt")
+words.each do |word|
+  Word.create(:word => word.strip)
+end
