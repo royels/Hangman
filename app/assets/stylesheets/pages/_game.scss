@@ -11,10 +11,16 @@ body {
   padding-top: 60px;
 }
 
-.container {
+.game-container {
   @include centerdiv;
-  height: 80%;
-  vertical-align: middle;
+  position: relative;
   background-color: $background-color;
+  height: 91%;
+}
 
+.info {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
