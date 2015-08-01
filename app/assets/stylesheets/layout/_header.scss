@@ -1,5 +1,5 @@
 header {
-
-  background-image: bettergradient(lightseagreen, white, left );
+  /* this is hacks, sorry :( */
+  background-image: bettergradient($primary-color, $primary-color, right);
   height: $division-height-pixel;
 }

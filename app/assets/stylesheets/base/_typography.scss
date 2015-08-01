@@ -1,22 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900);
+
 html, body {
   font-family: "Helvetica Neue", "Arial", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 h1 {
   font-size: 10em;
+  font-family: Roboto;
+  font-weight: 100;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   text-align: center;
   font-weight: normal;
   color: #777;

@@ -5,14 +5,23 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Start game</button>
 </div>
 <%= render 'game/startmodal' %>
-
-<div class="row">
-  <div class="col-md-4">
-    <h2>Instructions</h2>
-    <p>Here's how to play:</p>
-  </div>
-  <div class="col-md-4">
-    <h2>You're never going to win....</h2>
-    <p>In it's current state, anyway. Ping me if you figure out the algorithm!</p>
+<div class="container extra-information">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2>Instructions</h2>
+      <p>Here's how to win: Don't die (Instructions on how to do that in the button below.) BTW: Use Chrome.</p>
+      <p><a class="btn btn-default" href="#" role="button">Full Instructions »</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>View the source!</h2>
+      <p>On GitHub for the world to see. I tried to be pretty good about conventions and style.</p>
+      <p><a class="btn btn-default" href="#" role="button">Go to GitHub repo »</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>What's the secret sauce?</h2>
+      <p>If you figure out the algorithm and can win a game, ping me on Twitter or follow me on GitHub! (pls)</p>
+      <p><a class="btn btn-default" href="#" role="button">Retweet »</a></p>
+    </div>
   </div>
 </div>
