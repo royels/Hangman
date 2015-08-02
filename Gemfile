@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'turbolinks'
 
+gem 'font-awesome-rails'
 gem 'responders', '~> 2.0'
 gem 'slim-rails'
 gem 'bootstrap-sass'
