@@ -2,16 +2,16 @@
 <h1>Hangman</h1>
 <p>It's terribly evil.</p>
 
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><i class="fa fa-play fa-lg"></i> Start game</button>
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#play" data-whatever="@mdo"><i class="fa fa-play fa-lg"></i> Start game</button>
 </div>
-<%= render 'game/startmodal' %>
+<%= render partial: 'layouts/modal', locals: {id: "play" } %>
 <div class="container extra-information">
   <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-4">
       <h2>Instructions</h2>
       <p>Here's how to win: Don't die (Instructions on how to do that in the button below.) BTW: Use Chrome.</p>
-      <p><a class="btn btn-success" href="#" role="button">Full Instructions »</a></p>
+      <p><a data-toggle="modal" data-target="#instruction" data-whatever="@mdo" class="btn btn-success" href="#" role="button">Full Instructions »</a></p>
     </div>
     <div class="col-md-4">
       <h2>View the source!</h2>
@@ -25,3 +25,4 @@
     </div>
   </div>
 </div>
+<%= render partial: 'layouts/modal', locals: {id: "instruction" } %>
