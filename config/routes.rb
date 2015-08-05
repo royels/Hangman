@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'words/new'
+
+  get 'words/edit'
+
+  get 'words/delete'
+
   root "game#start"
   get "play" => "game#play"
 
