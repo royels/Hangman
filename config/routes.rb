@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   root "game#start"
   get "play" => "game#play"
+  post "words" => "wordset#update"
+  get "words" => "wordset#info"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
