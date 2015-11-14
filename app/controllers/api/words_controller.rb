@@ -11,14 +11,11 @@ class Api::WordsController < ApplicationController
     letter = params[:letter]
     puts letter
     respond_with get_next_set_of_words
-
-
-
   end
 
   private
     def get_next_set_of_words
-
+      @words = Word.where("length(text) = " + $length.to_s)
     end
 
 end
