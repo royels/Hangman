@@ -3,3 +3,8 @@
 <% ("A".."Z").to_a.each do |bar| %>
     <button class="btn btn-info"><%= bar %></button>
 <% end %>
+<span>
+<% (1..$length.to_i + 1).to_a.each do |hand| %>
+    <div class="guess"><h1>-</h1></div>
+<% end %>
+</span>

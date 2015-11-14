@@ -17,9 +17,11 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'turbolinks'
 
 gem 'ember-rails'
+gem 'ember-source'
 gem 'font-awesome-rails'
 gem 'responders', '~> 2.0'
 gem 'bootstrap-sass'
+gem 'browserify-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

@@ -1,6 +1,16 @@
-<form method="get" action="/play">
+<form name="length_form" method="get" onsubmit="return validateLength()" action="/play">
+  <script>
+    function validateLength() {
+        var lengthVal = document.forms["length_form"]["length"].value
+        if(!(parseInt(lengthVal) <= 20)) {
+            alert("You're not very bright, are you?");
+            return false;
+        }
+        return true;
+    }
+  </script>
   <div class="form-group">
-    <label for="recipient-name" class="control-label">What word length do you want to use?</label>
+    <label for="recipient-name" class="control-label">What word length do you want to use? (Has to be less than 20)</label>
     <input type="text" class="form-control" name="length" id="recipient-name">
   </div>
   <input type="submit" value="Start!">
