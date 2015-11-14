@@ -1,10 +1,18 @@
 <h1>Game#play</h1>
 <p>Find me in app/views/game/play.html.erb</p>
+
 <% ("A".."Z").to_a.each do |bar| %>
-    <button class="btn btn-info"><%= bar %></button>
+    <button onclick="testFunc(this)" class="possible-guess btn btn-info"><%= bar %></button>
 <% end %>
+<br>
+<script>
+    function testFunc(obj) {
+        alert(obj.innerHTML);
+    }
+
+</script>
 <span>
-<% (1..$length.to_i + 1).to_a.each do |hand| %>
-    <div class="guess"><h1>-</h1></div>
+<% (1..$length.to_i + 1).to_a.each do |num| %>
+    <div class="guess guess-<%= num %>"><h1>-</h1></div>
 <% end %>
 </span>

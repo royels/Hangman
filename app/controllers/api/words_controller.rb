@@ -7,4 +7,18 @@ class Api::WordsController < ApplicationController
     respond_with @words
   end
 
+  def guess
+    letter = params[:letter]
+    puts letter
+    respond_with get_next_set_of_words
+
+
+
+  end
+
+  private
+    def get_next_set_of_words
+
+    end
+
 end

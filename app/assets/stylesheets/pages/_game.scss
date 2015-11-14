@@ -31,5 +31,8 @@ body {
 
 .guess {
   width: 30px;
+  display: inline-block;
   height: 30px;
+  padding-left: $guessbox-padding;
+  padding-right: $guessbox-padding;
 }
