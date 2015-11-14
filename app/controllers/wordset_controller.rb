@@ -1,2 +1,0 @@
-class WordsetController < ApplicationController
-end

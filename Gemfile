@@ -16,9 +16,9 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'turbolinks'
 
+gem 'ember-rails'
 gem 'font-awesome-rails'
 gem 'responders', '~> 2.0'
-gem 'slim-rails'
 gem 'bootstrap-sass'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

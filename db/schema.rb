@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725180924) do
+ActiveRecord::Schema.define(version: 20151114093701) do
 
   create_table "letters", force: :cascade do |t|
     t.string   "letter"
@@ -20,10 +20,7 @@ ActiveRecord::Schema.define(version: 20150725180924) do
   end
 
   create_table "words", force: :cascade do |t|
-    t.string   "word"
-    t.boolean  "usable",     default: true
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string "text"
   end
 
 end
