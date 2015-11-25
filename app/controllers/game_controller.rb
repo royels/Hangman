@@ -5,7 +5,7 @@ class GameController < ApplicationController
   end
 
   def play
-    $length = params[:length]
+    $length = Integer(params[:length])
   end
 
   def end
