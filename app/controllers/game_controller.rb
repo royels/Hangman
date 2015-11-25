@@ -1,4 +1,4 @@
-require 'net/http'
+require_relative "./hangman/hangman_runner"
 
 class GameController < ApplicationController
   def start
@@ -6,8 +6,11 @@ class GameController < ApplicationController
 
   def play
     $length = Integer(params[:length])
+    $words = Word.where("length(text) = " + $length.to_s)
+    $runner = HangmanRunner.new($words, $length)
   end
 
   def end
   end
+
 end

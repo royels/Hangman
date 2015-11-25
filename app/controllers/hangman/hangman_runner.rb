@@ -1,9 +1,13 @@
+require 'set'
 class HangmanRunner
   attr_accessor :words
 
-  def initialize(words)
-    @words = words
-    @pattern = "-" * @words[0].text.length
+  def initialize(words, length)
+    @words = Set.new
+    words.each do |word_obj|
+      @words.add(word_obj.text)
+    end
+    @pattern = "-" * length
   end
 
   def get_pattern(guess)
@@ -12,16 +16,16 @@ class HangmanRunner
     bestPattern = determine_max(words_pick)
     @pattern = make_new_pattern(bestPattern)
     @words = words_pick[bestPattern]
-    puts @pattern
     return @pattern
   end
 
   def make_pattern(words_pick, guess)
+    puts @words
     @words.each do |word|
       temp_pattern = ""
       temp = Set.new
-      (0...word.text.length).each do |i|
-        if word.text[i] == guess
+      (0...word.length).each do |i|
+        if word[i] == guess
           temp_pattern += guess
         else
           temp_pattern += "-"
@@ -29,12 +33,12 @@ class HangmanRunner
       end
 
       if not words_pick[temp_pattern]
-        temp.add(word.text)
+        temp.add(word)
         words_pick[temp_pattern] = temp
 
       else
         temp = words_pick[temp_pattern]
-        temp.add(word.text)
+        temp.add(word)
         words_pick[temp_pattern] = temp
       end
 
