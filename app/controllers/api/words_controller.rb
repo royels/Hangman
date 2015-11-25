@@ -1,21 +1,24 @@
+require_relative "../hangman/hangman_runner"
+
 class Api::WordsController < ApplicationController
   respond_to :json
 
-  def index
+  def initialize
     # This is one of the best candidates for SQL injection I've ever seen, TODO: remind me to try it sometime
     @words = Word.where("length(text) = " + $length.to_s)
-    respond_with @words
+    @guesses = SortedSet.new
+    @runner = HangmanRunner.new(@words, @guesses)
+  end
+
+  def index
+    respond_with @response
   end
 
   def guess
     letter = params[:letter]
-    puts letter
-    respond_with get_next_set_of_words
+    respond_with @response
   end
 
   private
-    def get_next_set_of_words
-      @words = Word.where("length(text) = " + $length.to_s)
-    end
 
 end

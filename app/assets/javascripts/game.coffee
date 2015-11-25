@@ -1,12 +1,13 @@
-#`
-#alert('gronk');
-#var butts = document.getElementsByClassName("possible-guess"))
-#for(var i = 0; i < butts.length; i++) {
-#  butts[i].onclick = get_new_words;
-#}
-#
-#function get_new_words() {
-#  alert(this.innerHTML);
-#}
-#
-#`
+`
+var buttons = document.getElementsByClassName("possible-guess");
+for(var i = 0; i < buttons.length; i++) {
+  buttons[i].onclick = get_new_words;
+}
+
+function get_new_words() {
+    var that = this;
+    $.get( "/api/guess", {letter: that.innerHTML}).done(function( data ) {
+            console.log( JSON.stringify(data) );
+    });
+}
+`
