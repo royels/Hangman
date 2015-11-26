@@ -5,7 +5,12 @@ class Api::GuessController < ApplicationController
 
   def index
     letter = params[:letter]
-    @response = $runner.get_pattern(letter)
-    respond_with @response.to_json
+    @pattern = $runner.get_pattern(letter)
+    @response = {
+        :pattern => @pattern,
+        :guesscount => $runner.guess_count,
+        :guesslist => $runner.guesslist
+    }
+    respond_with @response
   end
 end
