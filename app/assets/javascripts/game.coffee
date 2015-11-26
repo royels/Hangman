@@ -6,6 +6,7 @@ for(var i = 0; i < buttons.length; i++) {
 
 function get_new_words() {
     var that = this;
+    console.log('funk');
     $.get( "/api/guess", {letter: that.innerHTML}).done(function( data ) {
             console.log( JSON.stringify(data) );
     });

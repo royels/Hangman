@@ -6,7 +6,7 @@
 <% end %>
 <br>
 <span>
-<% (1..$length.to_i + 1).to_a.each do |num| %>
+<% (1..@length.to_i + 1).to_a.each do |num| %>
     <div class="guess guess-<%= num %>"><h1>-</h1></div>
 <% end %>
 </span>

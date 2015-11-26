@@ -4,6 +4,7 @@ class HangmanRunner
 
   def initialize(words, length)
     @words = Set.new
+    @tempset = words.clone
     words.each do |word_obj|
       @words.add(word_obj.text)
     end
@@ -11,16 +12,17 @@ class HangmanRunner
   end
 
   def get_pattern(guess)
+    guess = guess.downcase
     words_pick = {}
     make_pattern(words_pick, guess)
     bestPattern = determine_max(words_pick)
     @pattern = make_new_pattern(bestPattern)
     @words = words_pick[bestPattern]
+    puts @pattern
     return @pattern
   end
 
   def make_pattern(words_pick, guess)
-    puts @words
     @words.each do |word|
       temp_pattern = ""
       temp = Set.new
@@ -31,11 +33,9 @@ class HangmanRunner
           temp_pattern += "-"
         end
       end
-
-      if not words_pick[temp_pattern]
+      if words_pick[temp_pattern].nil?
         temp.add(word)
         words_pick[temp_pattern] = temp
-
       else
         temp = words_pick[temp_pattern]
         temp.add(word)
@@ -56,15 +56,19 @@ class HangmanRunner
         return_key = key
       end
     end
-    return_key
+    return return_key
   end
 
   def make_new_pattern(best_pattern)
     new_pat = ""
     (0...best_pattern.length).each do |i|
       if best_pattern[i] != @pattern[i]
-        if best_pattern[i] != '-' then new_pat += best_pattern[i] end
-        if @pattern[i] != '-' then new_pat += @pattern[i] end
+        if best_pattern[i] != '-'
+          new_pat += best_pattern[i]
+        end
+        if @pattern[i] != '-'
+          new_pat += @pattern[i]
+        end
       else
         new_pat += '-'
       end
