@@ -19,7 +19,6 @@ class HangmanRunner
   def get_pattern(guess)
     guess = guess.downcase
     if @guesslist.include? guess
-      puts guess
       return @pattern
     end
     @guesslist.add(guess)
@@ -28,7 +27,7 @@ class HangmanRunner
     bestPattern = determine_max(words_pick)
     @pattern = make_new_pattern(bestPattern)
     @words = words_pick[bestPattern]
-    if not @pattern.include?(guess) and not @guesslist.include?(guess)
+    if not @pattern.include?(guess)
       @guess_count -= 1
     end
     return @pattern
@@ -45,7 +44,6 @@ class HangmanRunner
           temp_pattern += "-"
         end
       end
-      puts temp_pattern
       if words_pick[temp_pattern].nil?
         temp.add(word)
         words_pick[temp_pattern] = temp
