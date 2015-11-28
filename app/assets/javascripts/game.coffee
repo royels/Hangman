@@ -2,6 +2,7 @@
 var buttons = document.getElementsByClassName("possible-guess");
 for(var i = 0; i < buttons.length; i++) {
   buttons[i].onclick = get_new_words;
+
 }
 
 function get_new_words() {

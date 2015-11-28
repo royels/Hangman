@@ -1,11 +1,33 @@
-<h1>Game#play</h1>
-<p>Find me in app/views/game/play.html.erb</p>
-<% ("A".."Z").to_a.each do |bar| %>
-    <button class="possible-guess btn btn-info"><%= bar %></button>
-<% end %>
+<script>
+  // This feels like überhax. I am sad.
+    window.onbeforeunload = function(){
+        window.sessionStorage.setItem('visited', new Date().getTime());
+    }
+    var visited = +window.sessionStorage.getItem('visited');
+    var isRefreshed = (new Date().getTime() - visited) < 6000;
+    if(isRefreshed == true) {
+        var confirmation = confirm("Refreshing will kill the current game and send you to the " +
+                "start page. Is it ok to do so?");
+        if(confirmation == true) {
+            window.location.replace('/');
+        }
+    }
+</script>
+<h1>Commence!</h1>
+<div class="container">
+  <!--<div class="button-div col-md-6">-->
+    <!--<p>Here is the selection of characters:</p>-->
+    <!--<% ("A".."Z").to_a.each do |bar| %>-->
+        <!--<button class="possible-guess guess-btn btn btn-info"><%= bar %></button>-->
+    <!--<% end %>-->
+  <!--</div>-->
+  <%= react_component 'Buttons', { data: ("A".."Z").to_a } %>
+  <div class="image-div col-md-6">
+  </div>
+</div>
+
 <br>
-<span>
-<% (1..@length.to_i + 1).to_a.each do |num| %>
-    <div class="guess guess-<%= num %>"><h1>-</h1></div>
-<% end %>
+<span class="col-md-12">
+<h1><%= (['-'] * @length.to_i).join(' ') %></h1>
+<%#= react_component 'Buttons', { data: ("A".."Z").to_a } %>
 </span>

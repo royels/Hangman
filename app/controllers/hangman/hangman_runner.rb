@@ -1,6 +1,6 @@
 require 'set'
 class HangmanRunner
-  attr_accessor :words, :guesslist, :guess_count
+  attr_accessor :words, :guesslist, :guess_count, :sanitized_pattern
 
   def initialize(words, length)
     @words = Set.new
@@ -9,6 +9,7 @@ class HangmanRunner
       @words.add(word_obj.text)
     end
     @pattern = "-" * length
+    @sanitized_pattern = @pattern.split("").join(" ")
     @guesslist = SortedSet.new
     @guess_count = 10
     # TODO: Make guess_count dynamic
@@ -30,7 +31,8 @@ class HangmanRunner
     if not @pattern.include?(guess)
       @guess_count -= 1
     end
-    return @pattern
+    @sanitized_pattern = @pattern.split("").join(' ')
+    return @sanitized_pattern
   end
 
   def make_pattern(words_pick, guess)

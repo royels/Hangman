@@ -13,4 +13,17 @@ class Api::GuessController < ApplicationController
     }
     respond_with @response
   end
+
+  def list
+    respond_with $runner.guesslist.to_json
+  end
+
+  def count
+    respond_with $runner.guess_count.to_json
+  end
+
+  def pattern
+    respond_with $runner.sanitized_pattern.to_json
+  end
+
 end
