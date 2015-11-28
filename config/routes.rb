@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root "game#start"
   get "play" => "game#play"
+  get "end" => "game#end"
   namespace :api, defaults: {format: 'json'} do
     resources :words
     get "guess" => "guess#index"

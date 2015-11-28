@@ -28,6 +28,7 @@
 
 <br>
 <span class="col-md-12">
-<h1><%= (['-'] * @length.to_i).join(' ') %></h1>
+<h1 id="pattern"><%= (['-'] * @length.to_i).join(' ') %></h1>
 <%#= react_component 'Buttons', { data: ("A".."Z").to_a } %>
 </span>
+<%= react_component 'Info', { data: "Guess status" } %>

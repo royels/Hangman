@@ -1,10 +1,17 @@
-$background-color: mix(lightcoral, white, 40%);
-$font: sans-serif;
+// Fonts
+$std-font: sans-serif;
+$display-font: Helvetica, Arial, sans-serif;
+
+// Fixed numbers
 $division-height-pixel: 60px;
 $division-height-percent: 20%;
+$letter-spacing-h1: -10px;
 
+// Colors
 $original_gray: gray;
 $primary-color: mix(darkturquoise, white, 40%);
 $gray_1: #eaeaea;
 $gray_2: mix($original_gray, white, 60%);
 $guessbox-padding: 20px;
+$guessbox-square-dimension: 40px;
+$background-color: mix(lightcoral, white, 40%);

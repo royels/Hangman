@@ -18,6 +18,13 @@ h1 {
   text-align: center;
 }
 
+h1#pattern{
+  letter-spacing: $letter-spacing-h1;
+  font-family: $display-font;
+  font-size: 6em;
+
+
+}
 
 
 h2 {

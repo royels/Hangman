@@ -20,7 +20,7 @@ class HangmanRunner
   def get_pattern(guess)
     guess = guess.downcase
     if @guesslist.include? guess
-      return @pattern
+      return @pattern.split("").join(' ')
     end
     @guesslist.add(guess)
     words_pick = {}

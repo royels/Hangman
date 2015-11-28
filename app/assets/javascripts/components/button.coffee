@@ -8,7 +8,7 @@
       data:
         letter: letter_val
       success: (data) =>
-        console.log(data)
+        $('#pattern').html(data.pattern)
   render: ->
     React.DOM.button
       className: "possible-guess guess-btn btn btn-info"
