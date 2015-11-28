@@ -9,6 +9,14 @@
         letter: letter_val
       success: (data) =>
         $('#pattern').html(data.pattern)
+        $('[data-toggle="popover"]').
+        attr('data-content',
+          'Guesses remaining: ' + data.guesscount +
+          "<br/>" +
+          "Guesses made: " + data.guesslist
+        )
+        if data.guesscount == 0 then window.location.replace "/end"
+        return
   render: ->
     React.DOM.button
       className: "possible-guess guess-btn btn btn-info"

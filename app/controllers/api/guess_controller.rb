@@ -11,10 +11,7 @@ class Api::GuessController < ApplicationController
         :guesscount => $runner.guess_count,
         :guesslist => $runner.guesslist
     }
-    if $runner.guess_count == 0 then redirect_to end_url
-    else
-      respond_with @response
-    end
+    respond_with @response
   end
 
   def list
